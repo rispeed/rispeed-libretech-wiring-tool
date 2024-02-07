@@ -53,7 +53,7 @@
                          * - SDI(MOSI) to Pin19 (SPI_MOSI)
                          * - D/C to Pin29 (GPIOX_17)
                          * - RESET to Pin31 (GPIOX_18)
-                         * - (LCD) CS to Pin24 (GPIOX_10)
+                         * - (LCD) CS to Pin37 (GPIOX_5)
                          * - GND to Pin25 (GND)
                          * - VCC/VIN to Pin17 (3.3V)
                          */
