@@ -22,8 +22,8 @@
 			 * - LED/Backlight to Pin2 (5v)
 			 * - SCK to Pin23 (SPI_CLK)
 			 * - SDI(MOSI) to Pin19 (SPI_MOSI)
-			 * - D/C to Pin29 (GPIOX_17)
-			 * - RESET to Pin31 (GPIOX_18)
+			 * - D/C to Pin33 (GPIOX_6)
+			 * - RESET to Pin35 (GPIOX_7)
 			 * - (LCD) CS to Pin37 (GPIOX_5)
 			 * - GND to Pin25 (GND)
 			 * - VCC/VIN to Pin17 (3.3V)
@@ -40,8 +40,8 @@
 				reg = <0>;
 				buswidth = <8>;
 				spi-max-frequency = <30000000>;
-				dc-gpios = <&gpio GPIOX_17 GPIO_ACTIVE_HIGH>;
-				reset-gpios = <&gpio GPIOX_18 GPIO_ACTIVE_HIGH>;
+				dc-gpios = <&gpio GPIOX_6 GPIO_ACTIVE_HIGH>;
+				reset-gpios = <&gpio GPIOX_7 GPIO_ACTIVE_HIGH>;
 				status = "okay";
 			};
 		};
