@@ -1,13 +1,7 @@
-/*
- * Copyright (c) 2017 BayLibre, SAS.
- * Author: Neil Armstrong <narmstrong@baylibre.com>
- *
- * SPDX-License-Identifier: (GPL-2.0+ OR MIT)
- */
 
 /*
  * Overlay aimed to enable SPICC on Header 7J1 :
- * Pins 19 (MOSI), 21 (MISO), 23 (CLK), 24 (SS0)
+ * Pins 19 (MOSI), 21 (MISO), 23 (CLK), 37 (CS1), 38 (CS2), 40 (CS3)
  */
 
 /dts-v1/;

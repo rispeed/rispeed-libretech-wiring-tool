@@ -1,12 +1,5 @@
 /*
- * Copyright (c) 2017 BayLibre, SAS.
- * Author: Neil Armstrong <narmstrong@baylibre.com>
- *
- * SPDX-License-Identifier: (GPL-2.0+ OR MIT)
- */
-
-/*
- * Overlay aimed to enable a spidev interface on SPICC bus with CS0
+ * Overlay aimed to enable a spidev interface on SPICC bus with two CS PINS 38, 40
  */
 
 /dts-v1/;
