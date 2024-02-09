@@ -36,7 +36,7 @@
 				fps = <15>;
 				height = <240>;
 				width = <320>;
-				debug = <3>;
+				debug = <4>;
 				reg = <0>;
 				buswidth = <8>;
 				spi-max-frequency = <30000000>;
@@ -44,6 +44,8 @@
 				reset-gpios = <&gpio GPIOX_7 GPIO_ACTIVE_HIGH>;
 				status = "okay";
 			};
+			
+						
 		};
 	};
 };
