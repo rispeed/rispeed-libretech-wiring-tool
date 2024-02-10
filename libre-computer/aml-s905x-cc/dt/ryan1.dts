@@ -1,12 +1,12 @@
-
 /*
- * Overlay aimed to enable SPICC on Header 7J1 :
- * Pins 19 (MOSI), 21 (MISO), 23 (CLK), 37 (CS0), 36 (CS1) , 38 (CS2), 40 (CS3)
- */
+	Ryan's 3d Printer Le-Potato Overlay
+	Enables 4 CS Pins for SPI on pins 33 (CS0), 35 (CS1), 38 (CS2), 40 (CS3)
+	One for LCD Screen, One for Touch Interface, One for Bed, and hotend accelerometer each. 
+*/
 
 /dts-v1/;
 /plugin/;
-
+ 
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/gpio/meson-gxl-gpio.h>
 
@@ -31,8 +31,7 @@
 			pinctrl-2 = <&spi_pins>, <&spi_idle_low_pins>;
 			pinctrl-names = "default", "idle-high", "idle-low";
 
-			/*cs-gpios = <&gpio GPIOX_10 GPIO_ACTIVE_LOW>, <&gpio GPIOX_1 GPIO_ACTIVE_LOW>, <&gpio GPIOX_5 GPIO_ACTIVE_LOW>;*/
-			cs-gpios = <&gpio GPIOX_5 GPIO_ACTIVE_LOW>, <&gpio GPIOX_2 GPIO_ACTIVE_LOW>, <&gpio GPIOX_3 GPIO_ACTIVE_LOW>, <&gpio GPIOX_4 GPIO_ACTIVE_LOW>;
+			cs-gpios = <&gpio GPIOX_6 GPIO_ACTIVE_LOW>, <&gpio GPIOX_7 GPIO_ACTIVE_LOW>,<&gpio GPIOX_3 GPIO_ACTIVE_LOW>, <&gpio GPIOX_4 GPIO_ACTIVE_LOW>;
 		};
 	};
 };

@@ -1,7 +1,10 @@
 /*
- * Overlay aimed to enable a spidev interface on SPICC bus with two CS PINS 38, 40
- */
-
+	Ryan's 3d Printer Le-Potato Overlay
+	Enables two Spidev devices (2, 3) (Pins 38 CS2, 40 CS3)
+	THese are for the two adxl345 accelerometers
+	CS2 (PIN38) 
+	CS3 (PIN40) 	
+*/
 /dts-v1/;
 /plugin/;
 
@@ -12,7 +15,6 @@
 		target = <&spicc>;
 		
 		__overlay__ {
-			
 			spidev@2 {
 				compatible = "rohm,dh2228fv";
 				reg = <2>;
@@ -23,7 +25,6 @@
 				reg = <3>;
 				spi-max-frequency = <30000000>;
 			};
-			
 		};
 	};
 };
