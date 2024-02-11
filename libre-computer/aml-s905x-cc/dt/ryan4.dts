@@ -20,15 +20,15 @@
 		
 		__overlay__ {
 
-			touchscreen@0 {
+			touchscreen@1 {
 				compatible = "ti,ads7846";
 				reg = <1>;
 				spi-max-frequency = <2000000>;
 				interrupt-parent = <&gpio_intc>;
 				interrupts = <IRQID_GPIOAO_8 IRQ_TYPE_EDGE_FALLING>;
 				pendown-gpio = <&gpio_ao GPIOAO_8 GPIO_ACTIVE_LOW>;
-				ti,x-min = /bits/ 16 <0>;
-				ti,y-min = /bits/ 16 <0>;
+				ti,x-min = /bits/ 16 <320>;
+				ti,y-min = /bits/ 16 <240>;
 				ti,x-max = /bits/ 16 <0x0FFF>;
 				ti,y-max = /bits/ 16 <0x0FFF>;
 				ti,pressure-min = /bits/ 16 <0>;

@@ -30,7 +30,7 @@
 			 */
 			display@0 {
 				compatible = "adafruit,yx240qv29", "ilitek,ili9341";
-				rotation = <90>;
+				rotation = <270>;
 				bgr = <0>;
 				fps = <15>;
 				height = <240>;

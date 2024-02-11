@@ -53,11 +53,11 @@
 		linux,uefi-mmap-desc-ver = <0x01>;
 		linux,uefi-mmap-desc-size = <0x28>;
 		linux,uefi-mmap-size = <0x550>;
-		linux,uefi-mmap-start = <0x00 0x538d3068>;
+		linux,uefi-mmap-start = <0x00 0x538d1068>;
 		linux,uefi-system-table = <0x00 0x7dea9b78>;
-		bootargs = "BOOT_IMAGE=/boot/vmlinuz-6.1.64-11810-g69b1ffe8ef6c root=UUID=b4186fcb-3f89-41ba-8555-d8d3907d885f ro noquiet fbcon=map:1 fbcon=rotate:2";
-		linux,initrd-end = <0x00 0x5507a7ab>;
-		linux,initrd-start = <0x00 0x538e3000>;
+		bootargs = "BOOT_IMAGE=/boot/vmlinuz-6.1.64-11810-g69b1ffe8ef6c root=UUID=b4186fcb-3f89-41ba-8555-d8d3907d885f ro noquiet";
+		linux,initrd-end = <0x00 0x550797ab>;
+		linux,initrd-start = <0x00 0x538e2000>;
 		u-boot,version = "2023.07+";
 		#address-cells = <0x02>;
 		#size-cells = <0x02>;
@@ -457,6 +457,22 @@
 				num-cs = <0x01>;
 				phandle = <0x53>;
 
+				display@0 {
+					status = "okay";
+					reset-gpios = <0x25 0x61 0x00>;
+					dc-gpios = <0x25 0x60 0x00>;
+					spi-max-frequency = <0x1c9c380>;
+					buswidth = <0x08>;
+					reg = <0x00>;
+					debug = <0x04>;
+					width = <0x140>;
+					height = <0xf0>;
+					fps = <0x0f>;
+					bgr = <0x00>;
+					rotation = <0x10e>;
+					compatible = "adafruit,yx240qv29\0ilitek,ili9341";
+				};
+
 				spidev@3 {
 					spi-max-frequency = <0x1c9c380>;
 					reg = <0x03>;
@@ -562,7 +578,7 @@
 				compatible = "amlogic,meson-gx-ao-cec";
 				reg = <0x00 0x100 0x00 0x14>;
 				interrupts = <0x00 0xc7 0x01>;
-				status = "okay";
+				status = "disabled";
 				clocks = <0x16 0x06>;
 				clock-names = "core";
 				pinctrl-0 = <0x17>;
