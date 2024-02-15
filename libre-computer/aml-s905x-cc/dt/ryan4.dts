@@ -14,8 +14,14 @@
 
 / {
 	compatible = "libretech,cc", "libretech,aml-s905x-cc-v2", "amlogic,s905x", "amlogic,meson-gxl";
-	
 	fragment@0 {
+		target = <&cec_AO>;
+		
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+	fragment@1 {
 		target = <&spicc>;
 		
 		__overlay__ {
@@ -33,7 +39,7 @@
 				ti,y-max = /bits/ 16 <4095>;
 				ti,pressure-min = /bits/ 16 <0>;
 				ti,pressure-max = /bits/ 16 <0xFFFF>;
-				ti,x-plate-ohms = /bits/ 16 <60>;
+				ti,x-plate-ohms = /bits/ 16 <100>;
 				ti,swap-xy = <1>; /* Enable swap_xy */
 				wakeup-source;
 				status = "okay";
