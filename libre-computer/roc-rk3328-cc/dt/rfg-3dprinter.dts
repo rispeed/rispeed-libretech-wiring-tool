@@ -7,12 +7,12 @@
 
 /*
 	A Device tree overlay for renegade to enable SPI with 4 chip select pins.
-	0 - ili9341 display
+	0 - ili9341 display adafruit / Hosyond 3.2" lcd from amazon
 	1 - ads7846 touch controller
 	2 - spi dev 0.2 (can be used for adxl or something else)
 	3 - spi dev 0.3 (can be used for a second adxl or something else)
 
-	Also enables uart 1 to communicate with printer.
+	Also enables uart 1 to communicate with printer on /dev/ttyS1
 
 	PINS:
 	19 - MOSI
