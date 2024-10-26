@@ -6,12 +6,28 @@
 #include <dt-bindings/interrupt-controller/irq.h>
 
 /*
-    A Device tree overlay that enables the following:
-    3.5" ILI9341 Display widh ADS7846 Touch controller as Spi Devices 0, and 1
-    2 Extra chip select pins for Spidev 2 and 3 for adxl sensors or whatever else you want
-    Uart 1 and Uart 2 
-    ---I connect printer to Uart 1 left uart 2 for later usage, 
-    ---if you are going to use Uart 2 mask the serial-getty@ttyS2 service so it doesn't start.
+	A Device tree overlay for renegade to enable SPI with 4 chip select pins.
+	0 - ili9341 display
+	1 - ads7846 touch controller
+	2 - spi dev 0.2 (can be used for adxl or something else)
+	3 - spi dev 0.3 (can be used for a second adxl or something else)
+
+	Also enables uart 1 to communicate with printer.
+
+	PINS:
+	19 - MOSI
+	21 - MISO
+	23 - CLK
+	
+	18 - DISPLAY DC
+	22 - DISPLAY RESET
+	24 - DISPLAY CHIP SELECT CS0
+
+	11 - TOUCHSCREEN IRQ
+	26 - TOUCHSCREEN CHIP SELECT CS1
+
+	37 - ADXL bed CHIP SELECT CS2 /dev/spidev0.2
+	35 - ADXL hotend CHIP SELECT CS3 /dev/spidev0.3
     
 */
 
@@ -61,13 +77,13 @@
 				interrupts = <20 IRQ_TYPE_EDGE_FALLING>;
 				pendown-gpio = <&gpio2 RK_PC4 GPIO_ACTIVE_LOW>;
 				ti,x-min = /bits/ 16 <0>;
-                ti,y-min = /bits/ 16 <0>;
-                ti,x-max = /bits/ 16 <4095>;
-                ti,y-max = /bits/ 16 <4095>;
-                ti,pressure-min = /bits/ 16 <0>;
-                ti,pressure-max = /bits/ 16 <0xFFFF>;
-                ti,x-plate-ohms = /bits/ 16 <100>;
-                ti,swap-xy = <1>; /* Enable swap_xy */
+		                ti,y-min = /bits/ 16 <0>;
+				ti,x-max = /bits/ 16 <4095>;
+		                ti,y-max = /bits/ 16 <4095>;
+		                ti,pressure-min = /bits/ 16 <0>;
+		                ti,pressure-max = /bits/ 16 <0xFFFF>;
+		                ti,x-plate-ohms = /bits/ 16 <100>;
+		                ti,swap-xy = <1>; /* Enable swap_xy */
 				wakeup-source;
 				status = "okay";
 			};
@@ -86,19 +102,6 @@
 	
 	fragment@2 {
                 target = <&uart1>;
-                __overlay__ {
-                        status = "okay";
-                };
-        };
-
-
-    /* 
-    ------------------------------------------
-        COMMENT OUT THIS LAST FRAGMENT IF YOU DONT WANT UART2 ENABLED
-    ------------------------------------------
-    */
-	fragment@3 {
-                target = <&uart2>;
                 __overlay__ {
                         status = "okay";
                 };
